@@ -18,3 +18,8 @@ Delete Functionality: Remove unwanted job listings.
 Empty States: User-friendly messages when no jobs match filters.
 
 Fully Responsive: Works on desktop, tablet, and mobile devices.
+Technology	Purpose
+HTML5	Semantic structure
+Tailwind CSS (CDN)	Responsive styling
+Vanilla JavaScript	Dynamic interactions
+CSS Grid/Flexbox	Modern layouts
