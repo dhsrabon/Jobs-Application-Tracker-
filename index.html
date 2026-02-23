@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireTrack Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-800">
+
+<div class="max-w-5xl mx-auto px-4 py-10">
+
+    
+    <h1 class="text-3xl font-bold mb-8">Job Application Tracker</h1>
+
+    
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+        <div class="bg-white p-5 rounded-xl shadow text-center">
+            <p>Total Jobs</p>
+            <p id="total-count" class="text-2xl font-bold">0</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow text-center">
+            <p>Interview</p>
+            <p id="interview-count" class="text-2xl font-bold text-green-600">0</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow text-center">
+            <p>Rejected</p>
+            <p id="rejected-count" class="text-2xl font-bold text-red-600">0</p>
+        </div>
+    </div>
+
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold">Available Jobs</h2>
+        <span id="jobs-info" class="text-gray-500 text-sm">0 jobs</span>
+    </div>
+
+    
+    <div class="flex gap-3 mb-8">
+        <button id="filter-all" class="px-4 py-2 rounded bg-blue-600 text-white">
+            All
+        </button>
+        <button id="filter-interview" class="px-4 py-2 rounded bg-gray-200 text-gray-700">
+            Interview
+        </button>
+        <button id="filter-rejected" class="px-4 py-2 rounded bg-gray-200 text-gray-700">
+            Rejected
+        </button>
+    </div>
+
+   
+    <div id="jobs-container" class="flex flex-col gap-6">
+
+        
+        <div class="job-card bg-white p-6 rounded-xl shadow" data-status="not-applied">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">Google</h3>
+                    <p>Frontend Engineer</p>
+                    <p class="text-sm text-gray-500">California, USA</p>
+                    <p class="text-sm text-gray-500">Full Time • $120,000/year</p>
+                    <p class="mt-2 text-sm">
+                        Build scalable UI systems using React and performance optimization.
+                    </p>
+                </div>
+                <button class="delete-btn text-red-500">🗑</button>
+            </div>
+
+            <span class="status-badge mt-3 inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded">
+                NOT APPLIED
+            </span>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn border border-green-500 text-green-600 px-4 py-1 rounded">
+                    Interview
+                </button>
+                <button class="reject-btn border border-red-500 text-red-600 px-4 py-1 rounded">
+                    Rejected
+                </button>
+            </div>
+        </div>
+        <div class="job-card bg-white p-6 rounded-xl shadow" data-status="not-applied">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">Youtube</h3>
+                    <p>Backend Engineer</p>
+                    <p class="text-sm text-gray-500">California, USA</p>
+                    <p class="text-sm text-gray-500">Full Time • $150,000/year</p>
+                    <p class="mt-2 text-sm">
+                        Build scalable backend systems and APIs for enterprise applications.
+                    </p>
+                </div>
+                <button class="delete-btn text-red-500">🗑</button>
+            </div>
+
+            <span class="status-badge mt-3 inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded">
+                NOT APPLIED
+            </span>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn border border-green-500 text-green-600 px-4 py-1 rounded">
+                    Interview
+                </button>
+                <button class="reject-btn border border-red-500 text-red-600 px-4 py-1 rounded">
+                    Rejected
+                </button>
+            </div>
+        </div>
+        <div class="job-card bg-white p-6 rounded-xl shadow" data-status="not-applied">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">Netflix</h3>
+                    <p>Frontend Engineer</p>
+                    <p class="text-sm text-gray-500">California, USA</p>
+                    <p class="text-sm text-gray-500">Full Time • $122,000/year</p>
+                    <p class="mt-2 text-sm">
+                        Develop high-performance streaming applications and enhance user experience.
+                    </p>
+                </div>
+                <button class="delete-btn text-red-500">🗑</button>
+            </div>
+
+            <span class="status-badge mt-3 inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded">
+                NOT APPLIED
+            </span>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn border border-green-500 text-green-600 px-4 py-1 rounded">
+                    Interview
+                </button>
+                <button class="reject-btn border border-red-500 text-red-600 px-4 py-1 rounded">
+                    Rejected
+                </button>
+            </div>
+        </div>
+        <div class="job-card bg-white p-6 rounded-xl shadow" data-status="not-applied">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">Microsoft</h3>
+                    <p>Frontend Engineer</p>
+                    <p class="text-sm text-gray-500">California, USA</p>
+                    <p class="text-sm text-gray-500">Full Time • $140,000/year</p>
+                    <p class="mt-2 text-sm">
+                        Develop innovative software solutions and enhance user experience across Microsoft products.
+                    </p>
+                </div>
+                <button class="delete-btn text-red-500">🗑</button>
+            </div>
+
+            <span class="status-badge mt-3 inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded">
+                NOT APPLIED
+            </span>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn border border-green-500 text-green-600 px-4 py-1 rounded">
+                    Interview
+                </button>
+                <button class="reject-btn border border-red-500 text-red-600 px-4 py-1 rounded">
+                    Rejected
+                </button>
+            </div>
+        </div>
+        <div class="job-card bg-white p-6 rounded-xl shadow" data-status="not-applied">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">BrackIT</h3>
+                    <p>Software Engineer</p>
+                    <p class="text-sm text-gray-500">California, USA</p>
+                    <p class="text-sm text-gray-500">Full Time • $120,000/year</p>
+                    <p class="mt-2 text-sm">
+                        Build scalable UI systems using React and performance optimization.
+                    </p>
+                </div>
+                <button class="delete-btn text-red-500">🗑</button>
+            </div>
+
+            <span class="status-badge mt-3 inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded">
+                NOT APPLIED
+            </span>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn border border-green-500 text-green-600 px-4 py-1 rounded">
+                    Interview
+                </button>
+                <button class="reject-btn border border-red-500 text-red-600 px-4 py-1 rounded">
+                    Rejected
+                </button>
+            </div>
+        </div>
+        <div class="job-card bg-white p-6 rounded-xl shadow" data-status="not-applied">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">DeshiIt</h3>
+                    <p>Backend Engineer</p>
+                    <p class="text-sm text-gray-500">Dhaka, Bangladesh</p>
+                    <p class="text-sm text-gray-500">Full Time • $122,000/year</p>
+                    <p class="mt-2 text-sm">
+                        Build scalable backend systems and APIs for enterprise applications.
+                    </p>
+                </div>
+                <button class="delete-btn text-red-500">🗑</button>
+            </div>
+
+            <span class="status-badge mt-3 inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded">
+                NOT APPLIED
+            </span>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn border border-green-500 text-green-600 px-4 py-1 rounded">
+                    Interview
+                </button>
+                <button class="reject-btn border border-red-500 text-red-600 px-4 py-1 rounded">
+                    Rejected
+                </button>
+            </div>
+        </div>
+        <div class="job-card bg-white p-6 rounded-xl shadow" data-status="not-applied">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">Apple,</h3>
+                    <p>Frontend Engineer</p>
+                    <p class="text-sm text-gray-500">California, USA</p>
+                    <p class="text-sm text-gray-500">Full Time • $120,000/year</p>
+                    <p class="mt-2 text-sm">
+                        Build high-performance iOS applications and improve user experience.
+                    </p>
+                </div>
+                <button class="delete-btn text-red-500">🗑</button>
+            </div>
+
+            <span class="status-badge mt-3 inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded">
+                NOT APPLIED
+            </span>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn border border-green-500 text-green-600 px-4 py-1 rounded">
+                    Interview
+                </button>
+                <button class="reject-btn border border-red-500 text-red-600 px-4 py-1 rounded">
+                    Rejected
+                </button>
+            </div>
+        </div>
+        <div class="job-card bg-white p-6 rounded-xl shadow" data-status="not-applied">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">Amazon</h3>
+                    <p>Frontend Engineer</p>
+                    <p class="text-sm text-gray-500">Washington, USA</p>
+                    <p class="text-sm text-gray-500">Full Time • $120,000/year</p>
+                    <p class="mt-2 text-sm">
+                       Develop distributed systems and scalable e-commerce platforms.optimization.
+                    </p>
+                </div>
+                <button class="delete-btn text-red-500">🗑</button>
+            </div>
+
+            <span class="status-badge mt-3 inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded">
+                NOT APPLIED
+            </span>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn border border-green-500 text-green-600 px-4 py-1 rounded">
+                    Interview
+                </button>
+                <button class="reject-btn border border-red-500 text-red-600 px-4 py-1 rounded">
+                    Rejected
+                </button>
+            </div>
+        </div>
+        <div class="job-card bg-white p-6 rounded-xl shadow" data-status="not-applied">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">IBM,</h3>
+                    <p>Frontend Engineer</p>
+                    <p class="text-sm text-gray-500">New York, USA</p>
+                    <p class="text-sm text-gray-500">Full Time • $121,000/year</p>
+                    <p class="mt-2 text-sm">
+                        Implement enterprise AI solutions and hybrid cloud services.
+                </div>
+                <button class="delete-btn text-red-500">🗑</button>
+            </div>
+
+            <span class="status-badge mt-3 inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded">
+                NOT APPLIED
+            </span>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn border border-green-500 text-green-600 px-4 py-1 rounded">
+                    Interview
+                </button>
+                <button class="reject-btn border border-red-500 text-red-600 px-4 py-1 rounded">
+                    Rejected
+                </button>
+            </div>
+        </div>
+
+
+       
+        <div class="job-card bg-white p-6 rounded-xl shadow" data-status="not-applied">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">Symphony Software</h3>
+                    <p>API Developer</p>
+                    <p class="text-sm text-gray-500">Texas, USA</p>
+                    <p class="text-sm text-gray-500">Full Time • $110,000/year</p>
+                    <p class="mt-2 text-sm">
+                        Global leader in VoIP, telecommunications, and cloud telephony solutions serving 78+ countries.
+                    </p>
+                </div>
+                <button class="delete-btn text-red-500">🗑</button>
+            </div>
+
+            <span class="status-badge mt-3 inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded">
+                NOT APPLIED
+            </span>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn border border-green-500 text-green-600 px-4 py-1 rounded">
+                    Interview
+                </button>
+                <button class="reject-btn border border-red-500 text-red-600 px-4 py-1 rounded">
+                    Rejected
+                </button>
+            </div>
+        </div>
+
+       
+
+    </div>
+
+    
+    <div id="empty-state" class="hidden text-center py-16">
+        <img src="/jobs.png" alt="No jobs" class="mx-auto w-32 h-32 mb-6 opacity-50">
+        <h3 id="empty-title" class="text-xl font-semibold">No jobs available</h3>
+        <p id="empty-subtitle" class="text-gray-500 mt-2">
+            Try switching tabs or add new jobs.
+        </p>
+    </div>
+
+</div>
+
+<script src="scprit.js"></script>
+
+</body>
+</html>
